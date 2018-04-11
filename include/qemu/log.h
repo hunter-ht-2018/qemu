@@ -7,7 +7,7 @@
 /* Private global variable, don't use */
 extern FILE *qemu_logfile;
 
-/* 
+/*
  * The new API:
  *
  */
@@ -35,6 +35,7 @@ static inline bool qemu_log_separate(void)
 #define CPU_LOG_INT        (1 << 4)
 #define CPU_LOG_EXEC       (1 << 5)
 #define CPU_LOG_PCALL      (1 << 6)
+#define CPU_LOG_TB_IN_FLOW (1 << 7)
 #define CPU_LOG_TB_CPU     (1 << 8)
 #define CPU_LOG_RESET      (1 << 9)
 #define LOG_UNIMP          (1 << 10)

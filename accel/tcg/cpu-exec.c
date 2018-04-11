@@ -165,6 +165,14 @@ static inline tcg_target_ulong cpu_tb_exec(CPUState *cpu, TranslationBlock *itb)
     }
 #endif /* DEBUG_DISAS */
 
+if (qemu_loglevel_mask(CPU_LOG_TB_IN_FLOW)
+        && qemu_log_in_addr_range(itb->pc)) {
+    qemu_log_lock();
+    log_ins_flow(cpu, itb->pc, itb->size);
+    //log_ins_flow(itb->tc.ptr, itb->tc.size);
+    qemu_log_unlock();
+}
+
     cpu->can_do_io = !use_icount;
     ret = tcg_qemu_tb_exec(env, tb_ptr);
     cpu->can_do_io = 1;

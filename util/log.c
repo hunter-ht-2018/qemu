@@ -244,6 +244,8 @@ const QEMULogItem qemu_log_items[] = {
       "show generated host assembly code for each compiled TB" },
     { CPU_LOG_TB_IN_ASM, "in_asm",
       "show target assembly code for each compiled TB" },
+    { CPU_LOG_TB_IN_FLOW, "in_flow",
+      "show target binary code for each compiled TB as instruction flow" },
     { CPU_LOG_TB_OP, "op",
       "show micro ops for each compiled TB" },
     { CPU_LOG_TB_OP_OPT, "op_opt",
