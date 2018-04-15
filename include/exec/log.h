@@ -35,12 +35,6 @@ static inline void log_cpu_state_mask(int mask, CPUState *cpu, int flags)
     }
 }
 
-static inline void log_ins_flow(void * code, unsigned long size)
-{
-
-    fwrite(code, 1, size, qemu_logfile);
-
-}
 
 #ifdef NEED_CPU_H
 /* disas() and target_disas() to qemu_logfile: */
